@@ -9,8 +9,6 @@
 tag('cicd-actions-runner')
 
 begin
-  include_recipe 'docker::default'
-rescue Chef::Exceptions::RecipeNotFound
   docker_service 'default' do
     action %i(create start)
     registry_mirror 'https://dockerhub-mirror.internal.digitalocean.com'
