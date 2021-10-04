@@ -2,9 +2,11 @@
 # Cookbook Name:: github
 # Recipe:: docker
 #
-# This sets up a basic docker environment for use with runners.
-#
 # All rights reserved. DigitalOcean, Inc. 2021
+
+# frozen_string_literal: true
+
+tag('cicd-actions-runner')
 
 begin
   include_recipe 'docker::default'
@@ -15,7 +17,7 @@ rescue Chef::Exceptions::RecipeNotFound
   end
 end
 
-_END_
+__END__
 
 group "docker" do
   action :modify

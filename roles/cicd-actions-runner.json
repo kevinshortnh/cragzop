@@ -1,0 +1,14 @@
+{
+  "name": "cicd-actions-runner",
+  "description": "GHE Actions Runner",
+  "default_attributes": {},
+  "run_list": [
+    "role[base]",
+    "recipe[github::actions_runner]",
+  ],
+  "override_attributes": {
+    "sssd": {
+      "allow_groups": "releng, cloudops"
+    }
+  }
+}
